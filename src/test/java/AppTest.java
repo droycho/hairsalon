@@ -106,19 +106,19 @@ public void tearDown() {
     assertThat(pageSource()).contains("Return to Home");
   }
 
-  // @Test
-  // public void clientUpdate() {
-  //   Stylist myStylist = new Stylist("Home");
-  //   myStylist.save();
-  //   Client myClient = new Client("Clean", myStylist.getId());
-  //   myClient.save();
-  //   String clientPath = String.format("http://localhost:4567/stylists/%d/clients/%d", myStylist.getId(), myClient.getId());
-  //   goTo(clientPath);
-  //   fill("#cname").with("Dance");
-  //   submit("#update-client");
-  //   assertThat(pageSource()).contains("Dance");
-  // }
-  //
+  @Test
+  public void clientUpdate() {
+    Stylist myStylist = new Stylist("Home");
+    myStylist.save();
+    Client myClient = new Client("Clean", myStylist.getId());
+    myClient.save();
+    String clientPath = String.format("http://localhost:4567/stylists/%d/clients/%d", myStylist.getId(), myClient.getId());
+    goTo(clientPath);
+    fill("#cname").with("Dance");
+    submit("#update-client");
+    assertThat(pageSource()).contains("Dance");
+  }
+
   // @Test
   // public void clientDelete() {
   //   Stylist myStylist = new Stylist("Home");
