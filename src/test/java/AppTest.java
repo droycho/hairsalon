@@ -58,16 +58,16 @@ public void tearDown() {
     assertThat(pageSource()).contains("Household chores");
   }
 
-  //  @Test
-  //  public void stylistShowPageDiplaySname() {
-  //    goTo("http://localhost:4567/stylists/new");
-  //    fill("#sname").with("Household cheese");
-  //    submit(".btn");
-  //    click("a", withText("View stylists"));
-  //    click("a", withText("Household cheese"));
-  //    assertThat(pageSource()).contains("Household cheese");
-  //  }
-  //
+   @Test
+   public void stylistShowPageDiplaySname() {
+     goTo("http://localhost:4567/stylists/new");
+     fill("#sname").with("Household cheese");
+     submit(".btn");
+     click("a", withText("View stylists"));
+     click("a", withText("Household cheese"));
+     assertThat(pageSource()).contains("Household cheese");
+   }
+
   //  @Test
   //  public void stylistClientsFormIsDisplayed() {
   //    goTo("http://localhost:4567/stylists/new");
