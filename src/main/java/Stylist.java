@@ -32,7 +32,7 @@ public class Stylist {
         .addParameter("id", this.id)
         .executeAndFetch(Client.class);
       }
-    }   
+    }
 
   @Override
   public boolean equals(Object otherStylist) {
@@ -62,6 +62,25 @@ public class Stylist {
         .addParameter("id", id)
         .executeAndFetchFirst(Stylist.class);
       return stylist;
+    }
+  }
+
+  public void update(String sname) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE stylists SET sname = :sname WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("sname", sname)
+        .addParameter("id", id)
+        .executeUpdate();
+    }
+  }
+
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+    String sql = "DELETE FROM stylists WHERE id = :id;";
+    con.createQuery(sql)
+      .addParameter("id", id)
+      .executeUpdate();
     }
   }
 }

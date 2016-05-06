@@ -1,0 +1,111 @@
+@font-face {
+    font-family: webFont;
+    src: url(webfont.ttf);
+}
+
+body {
+  font-family: webFont;
+  background-image: url("img/background.jpg");
+  background-size: cover;
+  color: white;
+  text-shadow: 0 0 20px #020202;
+}
+
+a {
+  color: white;
+}
+
+.jumbotron {
+  text-align: center;
+  font-weight: bold;
+  font-size: 120px;
+  margin-bottom: 60px;
+  text-shadow: 0 0 10px #020202,
+             0 0 20px #f5f5f5,
+             0 0 30px #f5f5f5,
+             0 0 40px #f5f5f5,
+             0 0 70px #f5f5f5,
+             0 0 80px #f5f5f5,
+             0 0 100px #f5f5f5,
+             0 0 150px #f5f5f5;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+form {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+ul {
+  text-align: center;
+  margin-bottom: 40px;
+  list-style-position: inside;
+}
+
+
+#cname {
+  width: inherit;
+  text-align: center;
+  display: block;
+  margin-bottom: 40px;
+}
+
+#addStylist {
+  font-size: 60px;
+}
+
+#addClient {
+  font-size: 50px;
+}
+
+#stylistInput {
+  font-size: 40px;
+}
+
+#clientInput {
+  font-size: 35px;
+}
+
+#sname {
+  color: black;
+}
+
+#cname {
+  color: black;
+}
+
+#styleBtn {
+  font-size: 30px;
+}
+
+#clientBtn {
+  font-size: 25px;
+}
+
+#styleSuccess {
+  font-size: 50px;
+}
+
+.viewBtn {
+  font-size: 40px;
+  text-align: center;
+  display: block;
+}
+
+.styleList{
+  font-size: 20px;
+}

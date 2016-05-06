@@ -37,97 +37,107 @@ public void tearDown() {
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
-    assertThat(pageSource()).contains("To Do List!");
+    assertThat(pageSource()).contains("Rook's Barber");
   }
 
   @Test
   public void stylistIsCreatedTest() {
     goTo("http://localhost:4567/");
 
-    fill("#sname").with("Household chores");
-    submit("#catBtn");
-    assertThat(pageSource()).contains("Your stylist has been saved.");
+    fill("#sname").with("Paul Mitchell");
+    submit("#styleBtn");
+    assertThat(pageSource()).contains("Your Stylist has been added to the Roster.");
   }
 
   @Test
   public void stylistIsDisplayedTest() {
-    Stylist myStylist = new Stylist("Household chores");
+    Stylist myStylist = new Stylist("Paul Mitchell");
     myStylist.save();
     String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
     goTo(stylistPath);
-    assertThat(pageSource()).contains("Household chores");
+    assertThat(pageSource()).contains("Paul Mitchell");
   }
 
    @Test
    public void stylistShowPageDiplaySname() {
      goTo("http://localhost:4567/stylists/new");
-     fill("#sname").with("Household cheese");
+     fill("#sname").with("Paul Mitchell");
      submit(".btn");
-     click("a", withText("View stylists"));
-     click("a", withText("Household cheese"));
-     assertThat(pageSource()).contains("Household cheese");
+     click("a", withText("View Stylists"));
+     click("a", withText("Paul Mitchell"));
+     assertThat(pageSource()).contains("Paul Mitchell");
    }
 
    @Test
    public void stylistClientsFormIsDisplayed() {
      goTo("http://localhost:4567/stylists/new");
-     fill("#sname").with("Shopping");
+     fill("#sname").with("Paul Mitchell");
      submit(".btn");
-     click("a", withText("View stylists"));
-     click("a", withText("Shopping"));
-     click("a", withText("Add a new client"));
-     assertThat(pageSource()).contains("Add a client to Shopping");
+     click("a", withText("View Stylists"));
+     click("a", withText("Paul Mitchell"));
+     click("a", withText("Add a new Client"));
+     assertThat(pageSource()).contains("Add a Client to Paul Mitchell");
    }
 
    @Test
    public void allClientsDisplayCnameOnStylistPage() {
-     Stylist myStylist = new Stylist ("Household chores");
+     Stylist myStylist = new Stylist ("Paul Mitchell");
      myStylist.save();
-     Client firstClient = new Client ("Mow the lawn", myStylist.getId());
+     Client firstClient = new Client ("Bill Murray", myStylist.getId());
      firstClient.save();
-     Client secondClient = new Client("Do the dishes", myStylist.getId());
+     Client secondClient = new Client("Tom Hanks", myStylist.getId());
      secondClient.save();
      String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
      goTo(stylistPath);
-     assertThat(pageSource()).contains("Mow the lawn");
-     assertThat(pageSource()).contains("Do the dishes");
+     assertThat(pageSource()).contains("Bill Murray");
+     assertThat(pageSource()).contains("Tom Hanks");
    }
 
   @Test
   public void clientShowPage() {
-    Stylist myStylist = new Stylist("Home");
+    Stylist myStylist = new Stylist("Oribe");
     myStylist.save();
-    Client myClient = new Client("Clean", myStylist.getId());
+    Client myClient = new Client("Carrot Top", myStylist.getId());
     myClient.save();
     String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
     goTo(stylistPath);
-    click("a", withText("Clean"));
-    assertThat(pageSource()).contains("Clean");
-    assertThat(pageSource()).contains("Return to Home");
+    click("a", withText("Carrot Top"));
+    assertThat(pageSource()).contains("Carrot Top");
+    assertThat(pageSource()).contains("Return to Oribe");
   }
 
   @Test
   public void clientUpdate() {
-    Stylist myStylist = new Stylist("Home");
+    Stylist myStylist = new Stylist("Oribe");
     myStylist.save();
-    Client myClient = new Client("Clean", myStylist.getId());
+    Client myClient = new Client("Carrot Top", myStylist.getId());
     myClient.save();
     String clientPath = String.format("http://localhost:4567/stylists/%d/clients/%d", myStylist.getId(), myClient.getId());
     goTo(clientPath);
-    fill("#cname").with("Dance");
+    fill("#cname").with("Bruce Lee");
     submit("#update-client");
-    assertThat(pageSource()).contains("Dance");
+    assertThat(pageSource()).contains("Bruce Lee");
   }
 
   @Test
   public void clientDelete() {
-    Stylist myStylist = new Stylist("Home");
+    Stylist myStylist = new Stylist("Oribe");
     myStylist.save();
-    Client myClient = new Client("Clean", myStylist.getId());
+    Client myClient = new Client("Carrot Top", myStylist.getId());
     myClient.save();
     String clientPath = String.format("http://localhost:4567/stylists/%d/clients/%d", myStylist.getId(), myClient.getId());
     goTo(clientPath);
     submit("#delete-client");
     assertEquals(0, Client.all().size());
+  }
+
+  @Test
+  public void stylistDelete() {
+    Stylist myStylist = new Stylist("Oribe");
+    myStylist.save();
+    String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
+    goTo(stylistPath);
+    submit("#delete-stylist");
+    assertEquals(0, Stylist.all().size());
   }
 }

@@ -1,18 +1,18 @@
-<h1>To Do List!</h1>
+<h1 style="background:transparent !important" class="jumbotron">Rook's Barber</h1>
 
-<p>Create a new stylist:</p>
+<p id="addStylist">Add a new Stylist:</p>
 
-<form action="/stylists" method="post">
-  <label for="sname">Stylist sname</label>
+<form id="stylistInput" action="/stylists" method="post">
+  <label for="sname">Stylist name:</label>
   <input id="sname" name="sname" type="text">
-  <button id="catBtn" type="submit" class="btn btn-success">Add Stylist</button>
+  <button id="styleBtn" type="submit" class="btn btn-success">Add Stylist</button>
 </form>
 
 
-<p> Add clients to any stylist:</p>
+<p id="addClient"> Add Clients to any Stylist:</p>
 
-<form action="/clients" method="post">
-  <label for="stylist_id">Select a List</label>
+<form id="clientInput" action="/clients" method="post">
+  <label for="stylist_id">Select a Stylist from this list:</label>
   <select id='stylist_id' name='stylist_id' type='text'>
     #foreach($stylist in $stylists)
       <option value="$stylist.getId()">$stylist.getSname()</option>
@@ -20,21 +20,20 @@
   </select>
 
   <div class="form-group">
-    <label for="cname">Cname</label>
-    <input id="cname" name="cname" type="text" class="form-control">
+    <label for="cname">Client Name:</label>
+    <input id="cname" name="cname" type="text" class="form-control center-block">
   </div>
 
-  <button type="submit" class="btn btn-success">Add Client</button>
+  <button id="clientBtn" type="submit" class="btn btn-success">Add Client</button>
 </form>
 
-
 #if($stylists)
-  <p>Click on a stylist to see its clients:</p>
-  <ul>
+  <p class="styleList">Select a Stylist to see their Clients:</p>
+  <ul class="styleList">
     #foreach ($stylist in $stylists)
       <li><a href="/stylists/$stylist.getId()">$stylist.getSname()</a></li>
     #end
   </ul>
 #else
-  <p>There are no stylists yet!</p>
+  <p class="styleList">There are no Stylists in your roster yet.</p>
 #end
