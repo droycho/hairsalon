@@ -68,17 +68,17 @@ public void tearDown() {
      assertThat(pageSource()).contains("Household cheese");
    }
 
-  //  @Test
-  //  public void stylistClientsFormIsDisplayed() {
-  //    goTo("http://localhost:4567/stylists/new");
-  //    fill("#sname").with("Shopping");
-  //    submit(".btn");
-  //    click("a", withText("View stylists"));
-  //    click("a", withText("Shopping"));
-  //    click("a", withText("Add a new client"));
-  //    assertThat(pageSource()).contains("Add a client to Shopping");
-  //  }
-  //
+   @Test
+   public void stylistClientsFormIsDisplayed() {
+     goTo("http://localhost:4567/stylists/new");
+     fill("#sname").with("Shopping");
+     submit(".btn");
+     click("a", withText("View stylists"));
+     click("a", withText("Shopping"));
+     click("a", withText("Add a new client"));
+     assertThat(pageSource()).contains("Add a client to Shopping");
+   }
+
   //  @Test
   //  public void allClientsDisplayCnameOnStylistPage() {
   //    Stylist myStylist = new Stylist ("Household chores");
