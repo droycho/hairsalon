@@ -25,13 +25,13 @@ public class StylistTest {
     Stylist myStylist = new Stylist("Paul Mitchell");
     assertEquals(true, myStylist instanceof Stylist);
   }
-//
-//   @Test
-//   public void getSname_stylistInstantiatesWithSname_String() {
-//     Stylist myStylist = new Stylist("Paul Mitchell");
-//     assertEquals("Paul Mitchell", myStylist.getSname());
-//   }
-//
+
+  @Test
+  public void getSname_stylistInstantiatesWithSname_String() {
+    Stylist myStylist = new Stylist("Paul Mitchell");
+    assertEquals("Paul Mitchell", myStylist.getSname());
+  }
+
 //   @Test
 //   public void all_emptyAtFirst() {
 //     assertEquals(Stylist.all().size(), 0);
