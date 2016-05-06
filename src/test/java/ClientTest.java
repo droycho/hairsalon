@@ -59,15 +59,16 @@ public class ClientTest {
     assertTrue(myClient.equals(savedClient));
   }
 
-//   @Test
-//   public void save_savesStylistIdIntoDB_true() {
-//     Stylist myStylist = new Stylist("Paul Mitchell");
-//     myStylist.save();
-//     Client myClient = new Client("Bill Murray", myStylist.getId());
-//     myClient.save();
-//     Client savedClient = Client.find(myClient.getId());
-//     assertEquals(savedClient.getStylistId(), myStylist.getId());
-//   }
+  @Test
+  public void save_savesStylistIdIntoDB_true() {
+    Stylist myStylist = new Stylist("Paul Mitchell");
+    myStylist.save();
+    Client myClient = new Client("Bill Murray", myStylist.getId());
+    myClient.save();
+    Client savedClient = Client.find(myClient.getId());
+    assertEquals(savedClient.getStylistId(), myStylist.getId());
+  }
+
 //   @Test
 //   public void update_updatesClientCname_true() {
 //     Client myClient = new Client("Bill Murray", 1);
