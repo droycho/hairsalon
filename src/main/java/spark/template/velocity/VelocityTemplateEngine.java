@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2013 Per Wendel
  *
@@ -63,7 +64,7 @@ public class VelocityTemplateEngine extends TemplateEngine {
      */
     @Override
     public String render(ModelAndView modelAndView) {
-        Template template = velocityEngine.getTemplate(modelAndView.getViewName());
+        Template template = velocityEngine.getTemplate(modelAndView.getViewSname());
         Object model = modelAndView.getModel();
         if (model instanceof Map) {
             Map<?, ?> modelMap = (Map<?, ?>) model;

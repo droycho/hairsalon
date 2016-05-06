@@ -1,9 +1,8 @@
-<h1>Add a category</h1>
+<p>Add a stylist:</p>
 
-<p>Add a category here:</p>
+<form action="/stylists" method="post">
+  <label for="sname">Client Cname</label>
+  <input id="sname" sname="sname" type="text">
 
-<form action="/categories" method="post">
-  <label for="name">Category name</label>
-  <input id="name" name="name" type="text">
-  <button type="submit" class="btn btn-success">Add Category</button>
+  <button type="submit" class="btn btn-default">Add Stylist</button>
 </form>

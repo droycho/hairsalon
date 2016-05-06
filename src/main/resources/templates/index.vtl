@@ -1,5 +1,40 @@
-<h1>Todo list!</h1>
+<h1>To Do List!</h1>
 
-<a href="/categories/new">Add a New Category</a>
-<br>
-<a href="/categories">View Category List</a>
+<p>Create a new stylist:</p>
+
+<form action="/stylists" method="post">
+  <label for="sname">Stylist sname</label>
+  <input id="sname" sname="sname" type="text">
+  <button id="catBtn" type="submit" class="btn btn-success">Add Stylist</button>
+</form>
+
+
+<p> Add clients to any stylist:</p>
+
+<form action="/clients" method="post">
+  <label for="stylist_id">Select a List</label>
+  <select id='stylist_id' sname='stylist_id' type='text'>
+    #foreach($stylist in $stylists)
+      <option value="$stylist.getId()">$stylist.getSname()</option>
+    #end
+  </select>
+
+  <div class="form-group">
+    <label for="cname">Cname</label>
+    <input id="cname" sname="cname" type="text" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-success">Add Client</button>
+</form>
+
+
+#if($stylists)
+  <p>Click on a stylist to see its clients:</p>
+  <ul>
+    #foreach ($stylist in $stylists)
+      <li><a href="/stylists/$stylist.getId()">$stylist.getSname()</a></li>
+    #end
+  </ul>
+#else
+  <p>There are no stylists yet!</p>
+#end

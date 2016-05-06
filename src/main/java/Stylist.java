@@ -1,66 +1,67 @@
 import java.util.List;
 import org.sql2o.*;
+import java.util.Arrays;
 
-public class Category {
+public class Stylist {
   private int id;
-  private String name;
+  private String sname;
 
-  public Category(String name) {
-    this.name = name;
+  public Stylist(String sname) {
+    this.sname = sname;
   }
 
-  public String getName() {
-    return name;
+  public String getSname() {
+    return sname;
   }
 
   public int getId() {
     return id;
   }
 
-  public static List<Category> all() {
-    String sql = "SELECT id, name FROM Categories";
+  public static List<Stylist> all() {
+    String sql = "SELECT id, sname FROM Stylists";
     try(Connection con = DB.sql2o.open()) {
-      return con.createQuery(sql).executeAndFetch(Category.class);
+      return con.createQuery(sql).executeAndFetch(Stylist.class);
     }
   }
 
+  public List<Client> getClients() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM clients where stylist_id=:id";
+      return con.createQuery(sql)
+        .addParameter("id", this.id)
+        .executeAndFetch(Client.class);
+      }
+    }   
+
   @Override
-  public boolean equals(Object otherCategory) {
-    if (!(otherCategory instanceof Category)) {
+  public boolean equals(Object otherStylist) {
+    if (!(otherStylist instanceof Stylist)) {
       return false;
     } else {
-      Category newCategory = (Category) otherCategory;
-      return this.getName().equals(newCategory.getName()) &&
-             this.getId() == newCategory.getId();
+      Stylist newStylist = (Stylist) otherStylist;
+      return this.getSname().equals(newStylist.getSname()) &&
+             this.getId() == newStylist.getId();
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO Categories(name) VALUES (:name)";
+      String sql = "INSERT INTO Stylists(sname) VALUES (:sname)";
       this.id = (int) con.createQuery(sql, true)
-        .addParameter("name", this.name)
+        .addParameter("sname", this.sname)
         .executeUpdate()
         .getKey();
     }
   }
 
-  public static Category find(int id) {
+  public static Stylist find(int id) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM Categories where id=:id";
-      Category category = con.createQuery(sql)
+      String sql = "SELECT * FROM Stylists where id=:id";
+      Stylist stylist = con.createQuery(sql)
         .addParameter("id", id)
-        .executeAndFetchFirst(Category.class);
-      return category;
-    }
-  }
-  public List<Task> getTasks() {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM tasks where categoryId=:id";
-      return con.createQuery(sql)
-        .addParameter("id", this.id)
-        .executeAndFetch(Task.class);
-
+        .executeAndFetchFirst(Stylist.class);
+      return stylist;
     }
   }
 }

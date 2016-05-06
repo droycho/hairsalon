@@ -1,7 +1,7 @@
-<h1>All categories</h1>
+<h1>All stylists</h1>
 <ul>
-  #foreach ($category in $categories)
-  <li><a href="/categories/$category.getId()">$category.getName()</a></li>
+  #foreach ($stylist in $stylists)
+    <li><a href="/stylists/$stylist.getId()">$stylist.getSname()</a></li>
   #end
 </ul>
-<a href="/categories/new">Add New Category</a>
+<a href="/stylists/new">Add New Stylist</a>
