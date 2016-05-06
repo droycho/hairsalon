@@ -24,13 +24,13 @@ public class ClientTest {
     Client myClient = new Client("Bill Murray", 1);
     assertEquals(true, myClient instanceof Client);
   }
-//
-//   @Test
-//   public void getCname_clientInstantiatesWithCname_String() {
-//     Client myClient = new Client("Bill Murray", 1);
-//     assertEquals("Bill Murray", myClient.getCname());
-//   }
-//
+
+  @Test
+  public void getCname_clientInstantiatesWithCname_String() {
+    Client myClient = new Client("Bill Murray", 1);
+    assertEquals("Bill Murray", myClient.getCname());
+  }
+
 //   @Test
 //   public void all_emptyAtFirst() {
 //     assertEquals(Client.all().size(), 0);
