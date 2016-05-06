@@ -31,11 +31,11 @@ public class ClientTest {
     assertEquals("Bill Murray", myClient.getCname());
   }
 
-//   @Test
-//   public void all_emptyAtFirst() {
-//     assertEquals(Client.all().size(), 0);
-//   }
-//
+  @Test
+  public void all_emptyAtFirst() {
+    assertEquals(Client.all().size(), 0);
+  }
+
 //   @Test
 //   public void equals_returnsTrueIfCnamesAretheSame() {
 //     Client firstClient = new Client("Bill Murray", 1);
