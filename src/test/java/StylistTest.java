@@ -32,11 +32,11 @@ public class StylistTest {
     assertEquals("Paul Mitchell", myStylist.getSname());
   }
 
-//   @Test
-//   public void all_emptyAtFirst() {
-//     assertEquals(Stylist.all().size(), 0);
-//   }
-//
+  @Test
+  public void all_emptyAtFirst() {
+    assertEquals(Stylist.all().size(), 0);
+  }
+
 //   @Test
 //   public void equals_returnsTrueIfSsnamesAretheSame() {
 //     Stylist firstStylist = new Stylist("Paul Mitchell");
