@@ -93,18 +93,18 @@ public void tearDown() {
      assertThat(pageSource()).contains("Do the dishes");
    }
 
-  // @Test
-  // public void clientShowPage() {
-  //   Stylist myStylist = new Stylist("Home");
-  //   myStylist.save();
-  //   Client myClient = new Client("Clean", myStylist.getId());
-  //   myClient.save();
-  //   String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
-  //   goTo(stylistPath);
-  //   click("a", withText("Clean"));
-  //   assertThat(pageSource()).contains("Clean");
-  //   assertThat(pageSource()).contains("Return to Home");
-  // }
+  @Test
+  public void clientShowPage() {
+    Stylist myStylist = new Stylist("Home");
+    myStylist.save();
+    Client myClient = new Client("Clean", myStylist.getId());
+    myClient.save();
+    String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
+    goTo(stylistPath);
+    click("a", withText("Clean"));
+    assertThat(pageSource()).contains("Clean");
+    assertThat(pageSource()).contains("Return to Home");
+  }
 
   // @Test
   // public void clientUpdate() {
