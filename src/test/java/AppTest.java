@@ -40,15 +40,15 @@ public void tearDown() {
     assertThat(pageSource()).contains("To Do List!");
   }
 
-  // @Test
-  // public void stylistIsCreatedTest() {
-  //   goTo("http://localhost:4567/");
-  //
-  //   fill("#sname").with("Household chores");
-  //   submit("#catBtn");
-  //   assertThat(pageSource()).contains("Your stylist has been saved.");
-  // }
-  //
+  @Test
+  public void stylistIsCreatedTest() {
+    goTo("http://localhost:4567/");
+
+    fill("#sname").with("Household chores");
+    submit("#catBtn");
+    assertThat(pageSource()).contains("Your stylist has been saved.");
+  }
+
   // @Test
   // public void stylistIsDisplayedTest() {
   //   Stylist myStylist = new Stylist("Household chores");
