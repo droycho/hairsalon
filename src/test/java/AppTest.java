@@ -49,16 +49,15 @@ public void tearDown() {
     assertThat(pageSource()).contains("Your stylist has been saved.");
   }
 
-  // @Test
-  // public void stylistIsDisplayedTest() {
-  //   Stylist myStylist = new Stylist("Household chores");
-  //   myStylist.save();
-  //   String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
-  //   goTo(stylistPath);
-  //   assertThat(pageSource()).contains("Household chores");
-  // }
-  //
-  //
+  @Test
+  public void stylistIsDisplayedTest() {
+    Stylist myStylist = new Stylist("Household chores");
+    myStylist.save();
+    String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
+    goTo(stylistPath);
+    assertThat(pageSource()).contains("Household chores");
+  }
+
   //  @Test
   //  public void stylistShowPageDiplaySname() {
   //    goTo("http://localhost:4567/stylists/new");
