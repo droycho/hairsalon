@@ -4,7 +4,7 @@
 
 <form action="/stylists" method="post">
   <label for="sname">Stylist sname</label>
-  <input id="sname" sname="sname" type="text">
+  <input id="sname" name="sname" type="text">
   <button id="catBtn" type="submit" class="btn btn-success">Add Stylist</button>
 </form>
 
@@ -13,7 +13,7 @@
 
 <form action="/clients" method="post">
   <label for="stylist_id">Select a List</label>
-  <select id='stylist_id' sname='stylist_id' type='text'>
+  <select id='stylist_id' name='stylist_id' type='text'>
     #foreach($stylist in $stylists)
       <option value="$stylist.getId()">$stylist.getSname()</option>
     #end
@@ -21,7 +21,7 @@
 
   <div class="form-group">
     <label for="cname">Cname</label>
-    <input id="cname" sname="cname" type="text" class="form-control">
+    <input id="cname" name="cname" type="text" class="form-control">
   </div>
 
   <button type="submit" class="btn btn-success">Add Client</button>
