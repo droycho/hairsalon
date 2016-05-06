@@ -67,15 +67,15 @@ public class StylistTest {
     assertTrue(myStylist.equals(savedStylist));
   }
 
-//   @Test
-//   public void getClients_retrievesALlClientsFromDatabase_clientsList() {
-//     Stylist myStylist = new Stylist("Paul Mitchell");
-//     myStylist.save();
-//     Client firstClient = new Client("Mow the lawn", myStylist.getId());
-//     firstClient.save();
-//     Client secondClient = new Client("Do the dishes", myStylist.getId());
-//     secondClient.save();
-//     Client[] clients = new Client[] { firstClient, secondClient };
-//     assertTrue(myStylist.getClients().containsAll(Arrays.asList(clients)));
-//   }
+  @Test
+  public void getClients_retrievesALlClientsFromDatabase_clientsList() {
+    Stylist myStylist = new Stylist("Paul Mitchell");
+    myStylist.save();
+    Client firstClient = new Client("Mow the lawn", myStylist.getId());
+    firstClient.save();
+    Client secondClient = new Client("Do the dishes", myStylist.getId());
+    secondClient.save();
+    Client[] clients = new Client[] { firstClient, secondClient };
+    assertTrue(myStylist.getClients().containsAll(Arrays.asList(clients)));
+  }
 }
