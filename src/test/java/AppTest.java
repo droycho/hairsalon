@@ -79,21 +79,20 @@ public void tearDown() {
      assertThat(pageSource()).contains("Add a client to Shopping");
    }
 
-  //  @Test
-  //  public void allClientsDisplayCnameOnStylistPage() {
-  //    Stylist myStylist = new Stylist ("Household chores");
-  //    myStylist.save();
-  //    Client firstClient = new Client ("Mow the lawn", myStylist.getId());
-  //    firstClient.save();
-  //    Client secondClient = new Client("Do the dishes", myStylist.getId());
-  //    secondClient.save();
-  //    String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
-  //    goTo(stylistPath);
-  //    assertThat(pageSource()).contains("Mow the lawn");
-  //    assertThat(pageSource()).contains("Do the dishes");
-  //
-  //  }
-  //
+   @Test
+   public void allClientsDisplayCnameOnStylistPage() {
+     Stylist myStylist = new Stylist ("Household chores");
+     myStylist.save();
+     Client firstClient = new Client ("Mow the lawn", myStylist.getId());
+     firstClient.save();
+     Client secondClient = new Client("Do the dishes", myStylist.getId());
+     secondClient.save();
+     String stylistPath = String.format("http://localhost:4567/stylists/%d", myStylist.getId());
+     goTo(stylistPath);
+     assertThat(pageSource()).contains("Mow the lawn");
+     assertThat(pageSource()).contains("Do the dishes");
+   }
+
   // @Test
   // public void clientShowPage() {
   //   Stylist myStylist = new Stylist("Home");
@@ -106,6 +105,7 @@ public void tearDown() {
   //   assertThat(pageSource()).contains("Clean");
   //   assertThat(pageSource()).contains("Return to Home");
   // }
+
   // @Test
   // public void clientUpdate() {
   //   Stylist myStylist = new Stylist("Home");
