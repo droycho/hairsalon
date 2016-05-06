@@ -37,13 +37,13 @@ public class StylistTest {
     assertEquals(Stylist.all().size(), 0);
   }
 
-//   @Test
-//   public void equals_returnsTrueIfSsnamesAretheSame() {
-//     Stylist firstStylist = new Stylist("Paul Mitchell");
-//     Stylist secondStylist = new Stylist("Paul Mitchell");
-//     assertTrue(firstStylist.equals(secondStylist));
-//   }
-//
+  @Test
+  public void equals_returnsTrueIfSsnamesAretheSame() {
+    Stylist firstStylist = new Stylist("Paul Mitchell");
+    Stylist secondStylist = new Stylist("Paul Mitchell");
+    assertTrue(firstStylist.equals(secondStylist));
+  }
+
 //   @Test
 //   public void save_savesIntoDatabase_true() {
 //     Stylist myStylist = new Stylist("Paul Mitchell");
