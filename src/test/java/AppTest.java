@@ -76,7 +76,7 @@ public void tearDown() {
      click("a", withText("View Stylists"));
      click("a", withText("Paul Mitchell"));
      click("a", withText("Add a new Client"));
-     assertThat(pageSource()).contains("Add a Client to Paul Mitchell");
+     assertThat(pageSource()).contains("Add a Client for Paul Mitchell");
    }
 
    @Test

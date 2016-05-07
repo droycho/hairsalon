@@ -72,11 +72,11 @@ ul {
   font-size: 50px;
 }
 
-#stylistInput {
+.stylistInput {
   font-size: 40px;
 }
 
-#clientInput {
+.clientInput {
   font-size: 35px;
 }
 
@@ -91,12 +91,18 @@ ul {
 #styleBtn {
   font-size: 30px;
 }
+#styleBtn2 {
+  font-size: 30px;
+}
 
 #clientBtn {
   font-size: 25px;
 }
+#clientBtn2 {
+  font-size: 25px;
+}
 
-#styleSuccess {
+.pageSuccess {
   font-size: 50px;
 }
 
@@ -108,4 +114,16 @@ ul {
 
 .styleList{
   font-size: 20px;
+}
+
+#delete-stylist {
+  font-size: 30px;
+}
+
+#delete-client {
+  font-size: 30px;
+}
+
+#update-client {
+  font-size: 30px;
 }

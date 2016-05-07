@@ -1,10 +1,10 @@
-<h1>$client.getCname()</h1>
+<h1 style="background:transparent !important" class="jumbotron">$client.getCname()</h1>
 
-<p>Edit Client:</p>
+<p class="clientInput">Edit Client Information:</p>
 
-<form action="/stylists/$client.getStylistId()/clients/$client.getId()" method="post">
-  <label for="cname">Client Name:</label>
-  <input id="cname" name="cname" type="text">
+<form  class="clientInput" action="/stylists/$client.getStylistId()/clients/$client.getId()" method="post">
+  <label for="cname">Update Name:</label>
+  <input id="cname" name="cname" type="text" class="form-control center-block">
   <button type="submit" class="btn btn-info" id="update-client">Update Client</button>
 </form>
 
@@ -12,4 +12,4 @@
   <button type="submit" class="btn btn-danger" id="delete-client">Delete Client</button>
 </form>
 
-<a href="/stylists/$stylist.getId()">Return to $stylist.getSname()</a>
+<a class="viewBtn" href="/stylists/$stylist.getId()">Return to $stylist.getSname()</a>

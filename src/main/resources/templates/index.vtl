@@ -2,16 +2,16 @@
 
 <p id="addStylist">Add a new Stylist:</p>
 
-<form id="stylistInput" action="/stylists" method="post">
+<form class="stylistInput" action="/stylists" method="post">
   <label for="sname">Stylist name:</label>
   <input id="sname" name="sname" type="text">
-  <button id="styleBtn" type="submit" class="btn btn-success">Add Stylist</button>
+  <button id="styleBtn" type="submit" class="btn btn-default">Add Stylist</button>
 </form>
 
 
 <p id="addClient"> Add Clients to any Stylist:</p>
 
-<form id="clientInput" action="/clients" method="post">
+<form class="clientInput" action="/clients" method="post">
   <label for="stylist_id">Select a Stylist from this list:</label>
   <select id='stylist_id' name='stylist_id' type='text'>
     #foreach($stylist in $stylists)
@@ -24,7 +24,7 @@
     <input id="cname" name="cname" type="text" class="form-control center-block">
   </div>
 
-  <button id="clientBtn" type="submit" class="btn btn-success">Add Client</button>
+  <button id="clientBtn" type="submit" class="btn btn-default">Add Client</button>
 </form>
 
 #if($stylists)
