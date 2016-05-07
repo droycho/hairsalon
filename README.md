@@ -1,9 +1,9 @@
-# ToDoListDataBase
-practice in java
+# Hair Salon
+Java Week 3: Database Basics Independent project.
 
-## Cname
+## DJ Roychoudhury
 
-practice in java, gradle, velocity, and sparkJava
+Demonstration of basic java, gradle, velocity, and spark concepts.
 
 ## Setup/Installation Requirements
 
@@ -17,9 +17,6 @@ $ gradle run
 ```
 * _Open localhost:4567 in a browser._
 
-## Known Bugs
-
-_No current known bugs._
 
 ## Support and contact details
 
@@ -37,4 +34,4 @@ _To contact, leave a comment on Github._
 
 *MIT License*
 
-Copyright (c) 2016 **_Ryan Carlile_**
+Copyright (c) 2016 **_DJ Roychoudhury_**
